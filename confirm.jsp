@@ -7,31 +7,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sporty Shoes</title>
+<title>Sporty Shoes - Purchase Confirmation</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/view/components/header.jsp" ></jsp:include>
 <jsp:include page="/WEB-INF/view/components/topbar.jsp" ></jsp:include>
 
-<table border=1 cellspacing=2 cellpadding=4>
- 	<tr>
- 		<td><b>Product</b></td>
- 		<td><b>Price</b></td>
- 		<td><b>Category</b></td> 
- 		<td></td>
- 	</tr>
- 	<c:forEach items="${list}" var="item">
- 	  	<tr>
-	 		<td>${item.name }</td>
- 			<td>${item.price }</td>
- 			<td>${mapCats.get(item.ID)}</td>
- 	  		<td>
- 	  			<a href="cartadditem?id=${item.ID}">Add To Cart</a>
- 	  		</td>
- 	  	</tr>
- 	  </c:forEach>
-</table>
 
+<br><br>
+Your Order worth ${cartValue} has been completed successfully.<br><br>
+Check your <A href="memberpurchases">Order History</A>
+ 
 <jsp:include page="/WEB-INF/view/components/footer.jsp"></jsp:include>
 </body>
 </html>
