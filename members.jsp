@@ -7,37 +7,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin - Purchases Report</title>
+<title>Admin - Browse Members</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/view/components/admin-header.jsp" ></jsp:include>
 <jsp:include page="/WEB-INF/view/components/admin-topbar.jsp" ></jsp:include>
 
-
-<br><br>Total ${list.size()} Orders: ${totalAmount }<br>
+Total Members: ${list.size() }
 
 <table border=1 cellspacing=2 cellpadding=4>
  	<tr>
- 		<td><b>Order ID</b></td>
- 		<td><b>User</b>
- 		<td><b>Date</b></td>
- 		<td><b>Total</b></td>
- 		<td><b>Items</b></td>
+ 		<td><b>Name</b></td>
+ 		<td><b>Email</b></td>
+ 		<td><b>Signup Date</b></td>
+ 		<td><b>Age</b></td>
+ 		<td><b>Address</b></td>
  	</tr>
  	<c:forEach items="${list}" var="item">
  	  	<tr>
-	 		<td>${item.ID }</td>
- 			<td>
- 				${mapUsers.get(item.ID)}
- 			</td>
- 			<td>${item.date }</td>
- 			<td>${item.total}</td>
- 			<td>
- 				${mapItems.get(item.ID)}
- 			</td>
+	 		<td>${item.fname}&nbsp;${item.lname }</td>
+ 			<td>${item.email}</td>
+ 			<td>${item.dateAdded}</td>
+ 			<td>${item.age}</td>
+ 			<td>${item.address}</td>
+ 			
  	  	</tr>
  	  </c:forEach>
 </table> 		
+	
+
 
 <jsp:include page="/WEB-INF/view/components/admin-footer.jsp"></jsp:include>
 </body>

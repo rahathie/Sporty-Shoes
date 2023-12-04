@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sporty Shoes - Dashboard</title>
+<title>Admin Dashboard</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/view/components/header.jsp" ></jsp:include>
-<jsp:include page="/WEB-INF/view/components/topbar.jsp" ></jsp:include>
+<jsp:include page="/WEB-INF/view/components/admin-header.jsp" ></jsp:include>
+<jsp:include page="/WEB-INF/view/components/admin-topbar.jsp" ></jsp:include>
 
+Welcome, Admin.<br>Choose an option from the menu above
 
-
-<jsp:include page="/WEB-INF/view/components/footer.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/view/components/admin-footer.jsp"></jsp:include>
 </body>
 </html>

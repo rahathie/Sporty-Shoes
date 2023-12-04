@@ -7,26 +7,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin Login</title>
+<title>Admin - Add/Edit Product Category</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/view/components/admin-header.jsp" ></jsp:include>
+<jsp:include page="/WEB-INF/view/components/admin-topbar.jsp" ></jsp:include>
 
-${error}<br>
-
-<form name=frmLogin action="adminloginaction" method="post">
- <table border=1 cellspacing=2 cellpadding=4>
+<%
+if (request.getParameter("error") != null)
+	out.print(request.getParameter("error"));
+%>
+<form name=frmCat method=post action="admineditcataction">
+	<input type=hidden name=id value=${category.ID}>
+<table border=1 cellspacing=2 cellpadding=4>
  	<tr>
- 		<td width=25%>Admin id*</td>
- 		<td><input name=admin_id maxlength=20></td>
- 	</tr>
- 	<tr>
- 		<td width=25%>Admin Password*</td>
- 		<td><input name=admin_pwd maxlength=10 type="password"></td>
+ 		<td width=25%>Category name*</td>
+ 		<td><input name=name  maxlength=50 value="${category.name}"></td>
  	</tr>
  	<tr>
  		<td colspan=2>
- 			<button>Login</button>
+ 			<button>Save</button>
  		</td>
  	</tr>
  </table>
